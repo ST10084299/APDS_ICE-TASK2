@@ -34,8 +34,7 @@ jobs:
           -Dsonar.exclusions="**/android/**,**/ios/**" \
           -Dsonar.login="$SONAR_TOKEN" \
           -Dsonar.branch.name="$SONAR_BRANCH" \
-          -Dsonar.sources="." \
-          -Dsonar.analysis.mode=preview  # Disable Automatic Analysis
+          -Dsonar.sources="."
 
 workflows:
   say-hello-workflow:
