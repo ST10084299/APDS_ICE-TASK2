@@ -1,0 +1,37 @@
+GET http://localhost:5050/ HTTP/1.1
+###
+GET https://localhost:5050/ HTTP/1.1
+###
+GET http://localhost:5050/record HTTP/1.1
+###
+GET https://localhost:5050/record HTTP/1.1
+###
+POST https://localhost:5050/record HTTP/1.1
+content-Type: application/json
+
+{
+    "name":"Test444",
+    "position":"dev",
+    "level":"junior"
+}
+
+###
+GET https://localhost:5050/user HTTP/1.1
+###
+POST https://localhost:5050/user/signup HTTP/1.1
+content-Type: application/json
+
+{
+    "username": "Nikeal122",
+    "password": "Password@123"
+    
+}
+###
+POST https://localhost:5050/user/login HTTP/1.1
+content-Type: application/json
+
+{
+    "username": "Nikeal122",
+    "password": "Password@123"
+    
+}
