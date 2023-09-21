@@ -25,7 +25,7 @@ jobs:
           at: ~/workspace
       - run: |
           SONAR_BRANCH="${CIRCLE_BRANCH:-APDSIceTask2}"
-          echo "Sonar branch value is: "$SONAR_BRANCH
+          echo "Sonar branch value is: " $SONAR_BRANCH
           echo "Sonar org value is : "$SONAR_ORG
           sonar-scanner -X \
           -Dsonar.projectKey="$SONAR_PROJECT_KEY" \
@@ -37,7 +37,12 @@ jobs:
           -Dsonar.sources="."
 
 workflows:
-  say-hello-workflow:
+  version: 2
+  build-deploy:
     jobs:
       - say-hello
-      - sonarqube
+      - sonarqube:
+          filters:
+            branches:
+              only:
+                - APDSIceTask2
